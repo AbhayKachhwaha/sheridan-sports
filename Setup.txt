@@ -1,0 +1,58 @@
+﻿
+Download JDK(JDK 8u25 or over Recommended):
+	http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+
+
+Download and Install MySQL Community Server, Workbench & Connector/J (JDBC Driver):
+	http://dev.mysql.com/downloads/mysql/
+
+Run the MSI installer once downloaded:
+	Setup Type: Developer Default
+		Under MySQL Server 5.6.22 Configuration:
+		Set root account password to "sheridan"
+
+Download Tomcat 8.0.17:
+	http://tomcat.apache.org/download-80.cgi 
+		click on the zip link under Binary Configurations -> Core
+		Move the unzipped apache-tomcat-8.0.17 folder to your root C drive and rename the directory to tomcat
+
+
+Setup Tomcat 8.x to Use JDK
+	Your Tomcat application folder should be C:\tomcat
+	Set the JAVA_HOME environment variable for Tomcat
+		Go to C:\tomcat\bin
+		Right-click catalina.bat and edit the file with a text editor
+		Go to line 196 and remove the double quotes so that the statement becomes:
+		set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG%
+		Go to line 201 and remove the double quotes so that the statement becomes:
+		set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%
+		Add the following statement at line 93 and save catalina.bat:
+		set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_25
+		Your path to JDK 8 may be different!
+
+
+Download NetBeans.(NetBeans 8.0 or later Recommended)
+	https://netbeans.org/downloads/
+	Select your jdk1.8.0_25 folder as the JDK to use with NetBeans
+	C:\Program Files\Java\jdk1.8.0_25 (or something similar)
+
+
+Add Tomcat Server to NetBeans
+1.Open NetBeans
+2.Go to Tools -> Servers
+3.Click Add Server...
+4.Select Apache Tomcat or TomEE, click Next
+5.Add Server Instance
+	Server Location: C:\tomcat
+	Username: admin
+	Password: password
+	Make sure “Create user if it does not exist” is selected
+	Click Finish
+
+
+Run the script "PROG 32758 - SheridanSports.sql" in MySQL Workbench!
+
+Lastly, Open the prog32758.sheridansports project in NetBeans and Run.
+
+
