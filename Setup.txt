@@ -32,7 +32,7 @@ Setup Tomcat 8.x to Use JDK
 		Your path to JDK 8 may be different!
 
 
-Download NetBeans.(NetBeans 8.0 or later Recommended)
+Download NetBeans.(NetBeans 8.0 or over Recommended)
 	https://netbeans.org/downloads/
 	Select your jdk1.8.0_25 folder as the JDK to use with NetBeans
 	C:\Program Files\Java\jdk1.8.0_25 (or something similar)
